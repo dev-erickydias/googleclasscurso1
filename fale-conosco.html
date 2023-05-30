@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo Sobre O Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+</head>
+<script language="JavaScript" src="_javascript/funcoes.js"> </script>
+<script>
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('cqtd').value);
+        tot = qtd * 1500;
+        document.getElementById('ctot').value = tot;
+    }
+</script>
+<body>
+<div id="interface">
+
+    <header id="cabecalho">
+
+        <hgroup id="titulos1">
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+        <img id="icone" src="_imagens/contato.png">
+
+        <nav id="menu">
+            <!-- area para o navegação de menu -->
+            <h1>Menu Principal</h1>
+            <ul type="disc">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="corpo-full">
+        <article id="noticiaprincipal">
+            <header id="cabecalhodeartigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contatos</h3>
+                    <h1>Formulario de contato</h1>
+                    <h2>por Ericky_Dias</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2023</h3>
+                </hgroup>
+            </header>
+        </article>
+    </section>
+
+
+    <form method="post" id="fcontato" action="mailto:playsd0902@gmail.com" oninput="calc_total();">
+        <fieldset id="usuario">
+            <legend>Identificação do Usuário</legend>
+            <p><label for="cnome">Nome</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+            <p><label for="csenha">Senha</label><input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="Digite Sua Senha"/></p>
+            <p><label for="cmail">E-mail</label> <input type="email" name="temail" id="cmail" size="20" maxlength="40" placeholder="Digite Seu Email"/></p>
+            <fieldset id="sexo">
+                <legend>Sexo</legend>
+                <input type="radio" name="tsexo" id="cmasc"/><label for="cmasc">Masculino</label><br>
+                <input type="radio" name="tsexo" id="cfem"/><label for="cfem">Feminino</label>
+            </fieldset>
+            <p>Data de Nascimento<input type="date" name="tnasc" id="cnasc"></p>
+        </fieldset>
+
+        <fieldset id="endereco">
+            <legend>Endereço do Usuário</legend>
+            <p><label for="crua">Logradouro:</label><input type="text" name="trua" id="crua" size="" maxlength="" placeholder="Rua, AV, Trav"/></p>
+            <p><label for="cnumero">Numero:</label><input type="number" name="tnumero" id="cnumero" min="0" max="99999"/></p>
+            <p><label for="cest">estado:</label>
+                <select name="test" id="cest">
+                    <optgroup label="Região Sudeste">
+                        <option>Rio De Janeiro</option>
+                        <option selected>Minas Gerais</option>
+                        <option>São Paulo</option>
+                    </optgroup>
+                    <optgroup label="Região Sul">
+                        <option>Rio Grande do sul</option>
+                        <option>Paraná</option>
+                        <option>Santa Catarina</option>
+                    </optgroup>
+                </select> </p>
+            <p><label for="ccidade">Cidade:</label><input type="text" name="tcidade" id="ccidade" size="20" maxlength="30" placeholder="Qual a sua Cidade" list="cidade"/></p>
+            <datalist id="cidade">
+                <option value="Rio De Janeiro">Nova Iguasul</option>
+                <option value="Nova Iguaçu">Nova Iguasul</option>
+                <option value="Niterói">Nova Iguasul</option>
+            </datalist>
+        </fieldset>
+
+        <fieldset id="mensagem">
+            <legend>Mensagem do Usuário</legend>
+            <p><label for="curg">Grau de Urgência:</label> Mín<input type="range" name="turg" id="curg" min="0" max="10" step="2">Max</p>
+            <p><label for="cmens">Mensagem:</label><textarea name="tmens" id="cmens" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+        </fieldset>
+
+        <fieldset id="pedido">
+            <legend>Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tped" id="cped" checked><label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="ccor">Cor:</label><input type="color" name="tcor" id="ccor" value="#dddddd"></p>
+            <p><label for="cqtd">Quantidade:</label>
+            <input type="number" name="tqtd" id="cqtd" min="0" max="5" value="0"></p>
+            <p><label for="ctot">Preço Total: R$</label>
+            <input type="text" name="ttot" id="ctot" placeholder="Total a pagar" readonly></p>
+        </fieldset>
+
+        <input type="image" name="tenviar" src="_imagens/botao-enviar.png">
+    </form>
+
+<footer id="rodape">
+    <p>Copyright 2023 - by Ericky_Dias<br/>
+        <a href="https://www.facebook.com/ericky.henrique.09/" target="_blank"> Facebook</a> |
+        <a href="https://www.instagram.com/cbheavenshair/" target="_blank"> Instagram</a></p>
+</footer>
+</div>
+</body>
+</html>
